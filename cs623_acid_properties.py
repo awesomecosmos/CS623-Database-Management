@@ -19,7 +19,6 @@ def implementACIDtransaction(sql_query):
         # setting isolation level to Serizalizable to implement Isolation property
         conn.start_transaction(isolation_level='SERIALIZABLE')
 
-
         # establishing a cursor instance
         cursor = conn.cursor()
 
@@ -62,8 +61,8 @@ delete_from_Stock = "DELETE FROM Stock WHERE ProdID = 'p1'"
 
 # using function to ensure ACID properties implemented on these SQL queries
 
-implementACIDtransaction(repopulate_Product)
-implementACIDtransaction(repopulate_Stock)
+# implementACIDtransaction(repopulate_Product)
+# implementACIDtransaction(repopulate_Stock)
 
 implementACIDtransaction(delete_from_Product)
 implementACIDtransaction(delete_from_Stock)
